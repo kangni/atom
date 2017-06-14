@@ -80,12 +80,12 @@
     // height: 37px;
   }
 
-  atom-text-editor::shadow .gutter {
+  atom-text-editor .gutter {
   // :host .gutter {
     border-right: 0;
   }
 
-  atom-text-editor::shadow atom-text-editor-minimap,
+  atom-text-editor atom-text-editor-minimap,
   atom-text-editor atom-text-editor-minimap,
   html atom-text-editor-minimap {
     border-left: 1px solid #000;
@@ -106,10 +106,9 @@
 .theme-atom-material-syntax-dark,
 .theme-monokai-blackboard {
 
-  .atom-text-editor .line.highlight-line,
-  :host .line.highlight-line,
+  .atom-text-editor .line.highlight-line, .line.highlight-line,
   atom-text-editor .line.highlight-line,
-  atom-text-editor::shadow .line.highlight-line {
+  atom-text-editor .line.highlight-line {
     background: rgba(52, 61, 60, .4) !important;
   }
 
@@ -136,33 +135,32 @@
 .theme-atom-material-syntax-light,
 .theme-one-light-syntax {
 
-  .atom-text-editor .line.highlight-line,
-  :host .line.highlight-line,
+  .atom-text-editor .line.highlight-line, .line.highlight-line,
   atom-text-editor .line.highlight-line,
-  atom-text-editor::shadow .line.highlight-line {
+  atom-text-editor .line.highlight-line {
     background: rgba(100, 100, 100, 0.1) !important;
   }
 
   atom-text-editor .current-result .region,
-  atom-text-editor::shadow .current-result .region {
+  atom-text-editor .current-result .region {
     border-color: #06f;
     border-width: 2px;
   }
 
   atom-text-editor .find-result .region,
-  atom-text-editor::shadow .find-result .region {
+  atom-text-editor .find-result .region {
     border-color: #09f;
     border-width: 2px;
   }
 
-  :host .highlights .highlight-selected .region,
+ .highlights .highlight-selected .region,
   atom-text-editor .highlights .highlight-selected .region,
-  atom-text-editor::shadow .highlights .highlight-selected .region {
+  atom-text-editor .highlights .highlight-selected .region {
     border-color: #93f;
     border-width: 2px;
   }
 
-  atom-text-editor::shadow atom-text-editor-minimap,
+  atom-text-editor atom-text-editor-minimap,
   atom-text-editor atom-text-editor-minimap,
   html atom-text-editor-minimap {
     border-left: 1px solid #eee;
