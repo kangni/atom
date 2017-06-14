@@ -1,0 +1,181 @@
+/*
+ * Your Stylesheet
+ *
+ * This stylesheet is loaded when Atom starts up and is reloaded automatically
+ * when it is changed.
+ *
+ * If you are unfamiliar with LESS, you can read more about it here:
+ * http://www.lesscss.org
+ */
+
+.theme-atom-dark-ui {
+
+  @tab-height: 32px;
+
+  .tab-bar {
+    padding: 0; // 0 0 0 75px;
+    box-shadow: none;
+    height: @tab-height;
+    // background: #232526;
+    background: #292c2f;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+
+    &:after {
+      content: none;
+      // height: 0px;
+      // border-width: 1px 0 0 0;
+    }
+
+    .tab {
+      background: none;
+      margin: 0 0 0 0;
+      padding: 0 0px 0 0;
+      text-align: center;
+      height: @tab-height;
+      line-height: @tab-height;
+      top: 0;
+
+      &.active {
+        box-shadow: none;
+        // background: #1b1d1e;
+        // background: #4182c4;
+        background: #393c3f;
+        width: auto;
+        -webkit-flex: 1;
+      }
+
+      &:before,
+      &:after {
+        content: none;
+      }
+
+      .close-icon {
+        color: #666;
+        // line-height: 7px;
+        line-height: @tab-height;
+        right: 5px;
+        cursor: pointer;
+        display: none;
+      }
+
+      &.modified:not(:hover) .close-icon {
+        right: 5px;
+        top: 12px;
+        display: block;
+      }
+
+      &:hover {
+
+        .close-icon {
+          display: block;
+        }
+
+      }
+
+    }
+
+  }
+
+  .tool-bar.tool-bar-16px {
+    // height: 37px;
+  }
+
+  atom-text-editor::shadow .gutter {
+  // :host .gutter {
+    border-right: 0;
+  }
+
+  atom-text-editor::shadow atom-text-editor-minimap,
+  atom-text-editor atom-text-editor-minimap,
+  html atom-text-editor-minimap {
+    border-left: 1px solid #000;
+  }
+
+  .tree-view {
+    background: #1d1f21;
+    padding-top: 10px;
+  }
+
+  // .overlay.from-top,
+  atom-panel.modal {
+    top: 20%;
+  }
+
+}
+
+.theme-atom-material-syntax-dark,
+.theme-monokai-blackboard {
+
+  .atom-text-editor .line.highlight-line,
+  :host .line.highlight-line,
+  atom-text-editor .line.highlight-line,
+  atom-text-editor::shadow .line.highlight-line {
+    background: rgba(52, 61, 60, .4) !important;
+  }
+
+  .indent-guide-improved {
+    background-color: #333;
+    &.indent-guide-stack {
+      background-color: #333;
+      &.indent-guide-active {
+        background-color: #0066ff;
+      }
+    }
+  }
+
+}
+
+.theme-native-ui {
+
+}
+
+.theme-pen-paper-coffee-syntax,
+.theme-fizzy,
+// .theme-fizzy-syntax-theme,
+.theme-atom-light-syntax,
+.theme-atom-material-syntax-light,
+.theme-one-light-syntax {
+
+  .atom-text-editor .line.highlight-line,
+  :host .line.highlight-line,
+  atom-text-editor .line.highlight-line,
+  atom-text-editor::shadow .line.highlight-line {
+    background: rgba(100, 100, 100, 0.1) !important;
+  }
+
+  atom-text-editor .current-result .region,
+  atom-text-editor::shadow .current-result .region {
+    border-color: #06f;
+    border-width: 2px;
+  }
+
+  atom-text-editor .find-result .region,
+  atom-text-editor::shadow .find-result .region {
+    border-color: #09f;
+    border-width: 2px;
+  }
+
+  :host .highlights .highlight-selected .region,
+  atom-text-editor .highlights .highlight-selected .region,
+  atom-text-editor::shadow .highlights .highlight-selected .region {
+    border-color: #93f;
+    border-width: 2px;
+  }
+
+  atom-text-editor::shadow atom-text-editor-minimap,
+  atom-text-editor atom-text-editor-minimap,
+  html atom-text-editor-minimap {
+    border-left: 1px solid #eee;
+  }
+
+  .indent-guide-improved {
+    background-color: #eee;
+    &.indent-guide-stack {
+      background-color: #eee;
+      &.indent-guide-active {
+        background-color: #0099ff;
+      }
+    }
+  }
+
+}

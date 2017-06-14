@@ -1,0 +1,249 @@
+# Your keymap
+#
+# Atom keymaps work similarly to stylesheets. Just as stylesheets use selectors
+# to apply styles to elements, Atom keymaps use selectors to associate
+# keystrokes with events in specific contexts.
+#
+# You can create a new keybinding in this file by typing "key" and then hitting
+# tab.
+
+# ==============================================================================
+
+#'.platform-darwin':
+#  'cmd-t': 'unset!' # 'fuzzy-finder:toggle-file-finder'
+
+# ==============================================================================
+
+'atom-workspace atom-text-editor:not(.mini)':
+  'shift-enter': 'unset!' # 'jumpy:toggle'
+
+#'.platform-darwin atom-workspace':
+#  'shift-cmd-C': 'unset!' # 'color-picker:open'
+
+#'atom-workspace':
+#  'alt-cmd-v': 'unset!' # 'svg-preview:toggle'
+
+# ==============================================================================
+
+'atom-text-editor.vim-mode-plus:not(.insert-mode)':
+  ':': 'command-palette:toggle'
+  # 'cmd-alt-,': 'open ~/.atom/config.cson'
+  # 'cmd-alt-.': 'open ~/.atom/keymap.cson'
+
+  '/': 'find-and-replace:show'
+  '*': 'find-and-replace:use-selection-as-find-pattern'
+  'n': 'find-and-replace:find-next'
+  'shift-n': 'find-and-replace:find-previous'
+  ', space': 'find-and-replace:toggle'
+
+  ', /': 'project-find:show'
+
+  ', n space': 'editor:toggle-line-comments'
+  ', n m': 'block-comment:toggle'
+
+  ', m m': 'bookmarks:toggle-bookmark'
+  ', m h': 'bookmarks:toggle-bookmark'
+  ', m a': 'bookmarks:clear-bookmarks'
+  ', m v': 'bookmarks:view-all'
+
+  'z M': 'editor:fold-all'
+  'z R': 'editor:unfold-all'
+
+  # '%': 'vim-mode:bracket-matching-motion'
+
+  ', n t': 'tree-view:toggle'
+  ', t b': 'symbols-tree-view:toggle'
+  ', t l': 'todo-show:find-in-project'
+
+  ', d f': 'dash:shortcut'
+  ', d g': 'dash:shortcut-alt'
+  ', d h': 'hyperclick:confirm-cursor'
+  ', d l': 'link:open'
+  ', d c': 'color-picker:open'
+  ', d b': 'bezier-curve-editor:open'
+  ', d s': 'editor:log-cursor-scope'
+
+  ', f p': 'hey-pane:toggle-focus-of-active-pane'
+
+  ', g l': 'git-log:show'
+  ', g h': 'git-plus:log-current-file'
+  ', g t': 'git-time-machine:toggle'
+  ', g s': 'git-plus:status'
+  ', g a': 'git-plus:add'
+  # ', g a': 'git-plus:add-and-commit'
+  # ', g a': 'git-plus:add-all-and-commit'
+  # ', g a': 'git-plus:add-all-commit-and-push'
+  ', g d': 'git-history:show-file-history'
+  # ', g v': 'git-difftool:diff-project'
+  ', g b': 'git-blame:toggle'
+  # ', g b': 'open-on-github:blame'
+  ', g f': 'open-on-github:file'
+  ', g i': 'open-on-github:issues'
+  ', g g': 'open-on-github:repository'
+  ', g c': 'open-on-github:copy-url'
+  # 'alt-g h': 'open-on-github:history'
+  # 'alt-g r': 'open-on-github:branch-compare'
+
+  ', c d': 'split-diff:toggle'
+
+  ', s l': 'project-manager:list-projects'
+  ', s e': 'project-manager:edit-projects'
+  ', s s': 'project-manager:save-project'
+
+  ', p l': 'git-projects:toggle'
+  ', p a': 'git-projects:toggle-add'
+
+'atom-text-editor[data-grammar~=js]':
+  'f9': 'node-debugger:toggle-breakpoint'
+  'f10': 'node-debugger:start-resume'
+  'shift-f10': 'node-debugger:stop'
+  'ctrl-f0': 'node-debugger:start-active-file'
+  'f11': 'node-debugger:step-next'
+  'f12': 'node-debugger:step-in'
+  'shift-f12': 'node-debugger:step-out'
+
+'atom-text-editor.vim-mode-plus:not(.insert-mode)[data-grammar~=js]':
+  ', d d': 'tern:definition'
+  ', d r': 'tern:references'
+
+'atom-text-editor.vim-mode-plus:not(.insert-mode)[data-grammar~=css]':
+  'enter b': 'css-comb:comb'
+'atom-text-editor.vim-mode-plus:not(.insert-mode)[data-grammar~=scss]':
+  'enter b': 'css-comb:comb'
+'atom-text-editor.vim-mode-plus:not(.insert-mode)[data-grammar~=less]':
+  'enter b': 'css-comb:comb'
+
+'atom-text-editor.vim-mode-plus:not(.insert-mode)[data-grammar~=rust]':
+  ', d d': 'racer:find-definition'
+
+'atom-text-editor.vim-mode-plus.visual-mode':
+  'enter space': 'aligner:align'
+  'enter 0 space': 'atom-alignment:align'
+  'enter * space': 'atom-alignment:alignMultiple'
+  'enter b': 'atom-beautify:beautify-editor'
+
+  ', c m': 'change-case:camel'    # "getDoc"
+  ', c p': 'change-case:pascal'   # "GetDoc"
+  ', c c': 'change-case:constant' # "GET_DOC"
+  ', c _': 'change-case:snake'    # "get_doc"
+  ', c -': 'change-case:param'    # "get-doc"
+  ', c /': 'change-case:path'     # "get/doc"
+  ', c .': 'change-case:dot'      # "get.doc"
+  ', c s': 'change-case:sentence' # "get doc"
+  ', c t': 'change-case:title'    # "Get doc"
+
+  'z f': 'editor:fold-selection'
+
+'atom-text-editor:not(.mini).vim-mode-plus:not(.insert-mode):not(.jumpy-jump-mode)':
+  'q': 'jumpy:toggle'
+
+# ==============================================================================
+
+'body':
+  'ctrl-j': 'core:move-down'
+  'ctrl-k': 'core:move-up'
+
+'atom-text-editor':
+  'ctrl-k': 'core:move-up'
+  'cmd-shift-a': 'core:select-all'
+
+'atom-text-editor:not(.mini).vim-mode-plus:not(.insert-mode)':
+  'tab': 'editor:indent-selected-rows'
+  'shift-tab': 'editor:outdent-selected-rows'
+
+'atom-text-editor.vim-mode-plus:not(.command-mode).autocomplete-active':
+  'escape': 'autocomplete-plus:cancel'
+
+# 'atom-text-editor:not(.mini).autocomplete-active':
+  # 'enter': 'core:move-down'
+  # 'shift-enter': 'core:move-up'
+  # 'space': 'autocomplete-plus:cancel'
+
+# ==============================================================================
+
+'.platform-darwin':
+  'cmd-f': 'find-and-replace:show'
+  'cmd-shift-f': 'project-find:show'
+  'alt-cmd-f': 'find-and-replace:show-replace'
+
+'.platform-darwin .find-and-replace':
+  'cmd-enter': 'find-and-replace:confirm'
+  'alt-enter': 'find-and-replace:find-all'
+
+'.platform-darwin .find-and-replace .replace-container atom-text-editor':
+  'cmd-enter': 'find-and-replace:replace-all'
+
+'.find-and-replace, .project-find, .project-find .results-view':
+  'tab': 'find-and-replace:focus-next'
+  'shift-tab': 'find-and-replace:focus-previous'
+
+# ==============================================================================
+
+'body.platform-darwin':
+  'cmd-t': 'recent-files-fuzzy-finder:toggle-finder'
+  'cmd-p': 'fuzzy-finder:toggle-file-finder'
+  'cmd-b': 'fuzzy-finder:toggle-buffer-finder'
+  'shift-cmd-B': 'fuzzy-finder:toggle-git-status-finder'
+  'shift-enter': 'fuzzy-finder:invert-confirm'
+  'cmd-shift-h': 'git-plus:menu'
+
+  'cmd-g': 'git-projects:toggle-add'
+  'cmd-shift-g': 'git-projects:toggle'
+
+  'cmd-o': 'advanced-open-file:toggle'
+
+'.advanced-open-file atom-text-editor':
+  'tab': 'advanced-open-file:autocomplete'
+  'ctrl-p': 'advanced-open-file:move-cursor-up'
+  'ctrl-n': 'advanced-open-file:move-cursor-down'
+  'ctrl-j': 'advanced-open-file:move-cursor-up'
+  'ctrl-k': 'advanced-open-file:move-cursor-down'
+  'shift-delete': 'advanced-open-file:delete-path-component'
+
+'.platform-darwin atom-text-editor.vim-mode-plus:not(.insert-mode)':
+  'ctrl-p': 'clipboard-plus:toggle'
+
+'atom-workspace':
+  'cmd-shift-.': 'keybinding-cheatsheet:toggle'
+
+'.platform-darwin atom-workspace':
+  'ctrl-`': 'platformio-ide-terminal:toggle'
+#   'ctrl-`': 'term3:open'
+#
+# '.term3':
+#   'cmd-c': 'term3:copy'
+#   'ctrl-c': 'term3:copy'
+#   'cmd-v': 'term3:paste'
+#   'ctrl-v': 'term3:paste'
+#   'ctrl-insert': 'term3:copy'
+#   'shift-insert': 'term3:paste'
+
+'.platform-darwin .platformio-ide-terminal .terminal':
+  'cmd-c': 'platformio-ide-terminal:copy'
+  'cmd-v': 'platformio-ide-terminal:paste'
+  'cmd-w': 'platformio-ide-terminal:close'
+  'cmd-n': 'platformio-ide-terminal:new'
+  'cmd-}': 'platformio-ide-terminal:next'
+  'cmd-{': 'platformio-ide-terminal:prev'
+
+'.platform-darwin atom-text-editor':
+  'f6': 'build:toggle-panel'
+
+  'f5': 'linter:togglePanel'
+
+  'f4': 'build:trigger'
+
+  'f3': 'preview-plus:preview'
+
+  'f2': 'script:run'
+  'shift-f2': 'script:close-view'
+  'alt-f2': 'script:run-options'
+  'ctrl-f2': 'script:kill-process'
+
+  'f1': 'help:atom-docs'
+
+'.platform-darwin atom-text-editor:not(.mini)':
+  'cmd-ctrl-/': 'block-comment:toggle'
+
+'atom-text-editor[data-grammar="text html basic"]:not([mini]), atom-text-editor[data-grammar~="jsx"]:not([mini])':
+  'cmd-e': 'emmet:expand-abbreviation'

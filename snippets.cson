@@ -1,0 +1,579 @@
+# Your snippets
+#
+# Atom snippets allow you to enter a simple prefix in the editor and hit tab to
+# expand the prefix into a larger code block with templated values.
+#
+# You can create a new snippet in this file by typing "snip" and then hitting
+# tab.
+#
+# An example CoffeeScript snippet to expand log to console.log:
+#
+# '.source.coffee':
+#   'Console log':
+#     'prefix': 'log'
+#     'body': 'console.log $1'
+#
+
+".source.js, .source.jsx, .source.ts":
+
+  "enable Flow":
+    "prefix": "flow"
+    "body": """
+    /* @flow */
+
+    """
+
+  "React: forceUpdate(...)":
+    prefix: "fup"
+    body: "forceUpdate(${1:callback});"
+
+  "React: this.props.":
+    prefix: "props"
+    body: "this.props.${1}"
+
+  "React: this.state.":
+    prefix: "state"
+    body: "this.state.${1}"
+
+  "React: render(component, container, [callback])":
+    prefix: "rrc"
+    body: "ReactDOM.render(${1:<$2 />}, ${3:document.body}${4:, ${5:callback}});"
+
+  # React >0.13 (ES6)
+  "React: componentDidMount() { ... } (ES6)":
+    prefix: "cdm"
+    body: "componentDidMount() {\n\t${1}\n}"
+
+  "React: componentDidUpdate(pp, ps) { ... } (ES6)":
+    prefix: "cdup"
+    body: "componentDidUpdate(prevProps, prevState) {\n\t${1}\n}"
+
+  "React: componentWillMount() { ... } (ES6)":
+    prefix: "cwm"
+    body: "componentWillMount() {\n\t${1}\n}"
+
+  "React: componentWillReceiveProps(np) { ... } (ES6)":
+    prefix: "cwr"
+    body: "componentWillReceiveProps(nextProps) {\n\t${1}\n}"
+
+  "React: componentWillUnmount() { ... } (ES6)":
+    prefix: "cwun"
+    body: "componentWillUnmount() {\n\t${1}\n}"
+
+  "React: componentWillUpdate(np, ns) { ... } (ES6)":
+    prefix: "cwu"
+    body: "componentWillUpdate(nextProps, nextState) {\n\t${1}\n}"
+
+  "React: static defaultProps = { ... }":
+    prefix: "dp"
+    body: "static defaultProps = {\n\t${1}\n};"
+
+  "React: state = { ... }":
+    prefix: "is"
+    body: "state = {\n\t${1}: ${2}\n};"
+
+  "React: static propTypes = { ... } (ES6)":
+    prefix: "pt"
+    body: "static propTypes = {\n\t${1}: React.PropTypes.${2:string}\n};"
+
+  "React: render() { return ... } (ES6)":
+    prefix: "ren"
+    body: "render() {\n\treturn (\n\t\t${1:<div />}\n\t);\n}"
+
+  "React: setState({ ... }) (ES6)":
+    prefix: "sst"
+    body: "this.setState({\n\t${1}: ${2}\n});"
+
+  "React: shouldComponentUpdate(np, ns) { ... } (ES6)":
+    prefix: "scu"
+    body: "shouldComponentUpdate(nextProps, nextState) {\n\t${1}\n}"
+
+  "React: const { ${1} } = this.props (ES6)":
+    prefix: "props6"
+    body: "const { ${1} } = this.props;"
+
+  "React: const { ${1} } = this.state (ES6)":
+    prefix: "state6"
+    body: "const { ${1} } = this.state;"
+
+  "PropTypes.func.isRequired":
+    prefix: "ptf"
+    body: "PropTypes.func.isRequired"
+
+  "PropTypes.string.isRequired":
+    prefix: "pts"
+    body: "PropTypes.string.isRequired"
+
+  "PropTypes.object.isRequired":
+    prefix: "pto"
+    body: "PropTypes.object.isRequired"
+
+  "PropTypes.array.isRequired":
+    prefix: "pta"
+    body: "PropTypes.array.isRequired"
+
+  "PropTypes.bool.isRequired":
+    prefix: "ptb"
+    body: "PropTypes.bool.isRequired"
+
+  "PropTypes.number.isRequired":
+    prefix: "ptn"
+    body: "PropTypes.number.isRequired"
+
+  "PropTypes.node.isRequired":
+    prefix: "ptnode"
+    body: "PropTypes.node.isRequired"
+
+  "PropTypes.element.isRequired":
+    prefix: "pte"
+    body: "PropTypes.element.isRequired"
+
+  "PropTypes.any.isRequired":
+    prefix: "ptany"
+    body: "PropTypes.any.isRequired"
+
+  "PropTypes.shape({...}).isRequired":
+    prefix: "ptshape"
+    body: "PropTypes.shape({ $1: $2 }).isRequired"
+
+  "React: container component":
+    prefix: "rcc"
+    body: """
+    //import styles from './index.scss';
+    //import * as styles from './style';
+    import React, { Component } from 'react';
+    //import cssModules from 'react-css-modules';
+    //import Radium from 'radium';
+    import { autobind } from 'core-decorators';
+    import {
+      pureRender,
+      connect,
+      stateSelector,
+      actionDispatcher,
+    } from 'webcube/boilerplate';
+    import {
+
+    } from '../actions';
+
+    @connect()
+    @stateSelector(
+      state => state.model,
+      (model) => ({
+        model,
+      }),
+    )
+    @actionDispatcher({
+      push,
+      replace,
+    }, 'actions')
+    //@Radium
+    //@cssModules(styles)
+    @pureRender()
+    class ${1:ComponentName} extends Component {
+
+      static propTypes = {
+
+      };
+
+      static defaultProps = {
+
+      };
+
+      state = {
+
+      };
+
+      render () {
+        const {
+
+        } = this.props;
+        const {
+
+        } = this.state;
+        return (
+          <div></div>
+        );
+      }
+
+    }
+
+    export default ${1:ComponentName};
+    """
+
+  "React: stateless component (ES6)":
+    prefix: "rcs"
+    body: """
+    //import styles from './index.scss';
+    //import * as styles from './style';
+    import React from 'react';
+    //import cssModules from 'react-css-modules';
+    //import Radium from 'radium';
+
+    function ${1:ComponentName}({
+      ${2:prop},
+    }) {
+      return (
+        ${3:<div />}
+      );
+    }
+
+    //export default Radium(${1:ComponentName});
+    //export default cssModules(${1:ComponentName}, styles);
+    """
+
+  "es6+flow class skeleton":
+    "prefix": "cfs"
+    "body": """
+    /* @flow */
+
+    type ${1:ClassName}Options = {
+
+    };
+
+    type ${1:ClassName}DefaultOptions = {
+
+    };
+
+    class ${1:ClassName} {
+
+      opt: ${1:ClassName}DefaultOptions = {
+
+      };
+
+      constructor(userOpt: ${1:ClassName}Options) {
+        Object.assign(this.opt, userOpt);
+        if (!this.opt.root) {
+          return;
+        }
+      }
+
+    }
+
+    export default ${1:ClassName};
+    """
+
+  "rcd":
+    "prefix": "rcd"
+    "body": """
+    import React, { Component } from 'react';
+    import { autobind } from 'core-decorators';
+    import {
+      pureRender,
+    } from 'webcube/boilerplate';
+
+    export default (${2:composedOpt = \\{\\}}) => ComposedComponent => {
+
+      @pureRender()
+      class ${1:Wrapper} extends Component {
+
+        render() {
+          return (
+            <ComposedComponent
+              {...this.props}
+              {...this.state} />
+          );
+        }
+
+      }
+
+      return ${1:Wrapper};
+
+    }
+    """
+
+  "add styleName":
+    "prefix": "stylen"
+    "body": """
+    styleName="${1}"
+    """
+
+  "add className":
+    "prefix": "classn"
+    "body": """
+    className="${1}"
+    """
+
+  "add style module":
+    "prefix": "styles"
+    "body": """
+    style={styles.${1}}
+    """
+
+  "add style object":
+    "prefix": "style="
+    "body": """
+    style={{
+      ${1}
+    }}
+    """
+
+  "add onTouchTap":
+    "prefix": "ont"
+    "body": """
+    onTouchTap={${1}}
+    """
+
+  "add onClick":
+    "prefix": "onk"
+    "body": """
+    onClick={${1}}
+    """
+
+  "add onChange":
+    "prefix": "onc"
+    "body": """
+    onChange={${1}}
+    """
+
+  "add onBlur":
+    "prefix": "onb"
+    "body": """
+    onBlur={${1}}
+    """
+
+  "add onRequestClose":
+    "prefix": "onr"
+    "body": """
+    onRequestClose={${1}}
+    """
+
+  "add helmet":
+    "prefix": "helmet"
+    "body": """
+    <Helmet
+      title={`\\$\\{constants.${1:PAGE_NAME}\\} - \\$\\{constants.${2:SITE_NAME}\\}`}
+      meta={[
+        { name: 'description', content: constants.${3:PAGE_DESC} },${4}
+      ]} />
+    """
+
+  "import style.js":
+    "prefix": "imstyle"
+    "body": """
+    import * as styles from './style';
+    """
+
+  "import css":
+    "prefix": "imcss"
+    "body": """
+    import styles from './${1:index}.css';
+    """
+
+  "import scss":
+    "prefix": "imscss"
+    "body": """
+    import styles from './${1:index}.scss';
+    """
+
+  "import react":
+    "prefix": "imreact"
+    "body": """
+    import React${1:, \\{ Component \\}} from 'react';
+    """
+
+  "import CSS Modules":
+    "prefix": "imcssmodule"
+    "body": """
+    import cssModules from 'react-css-modules';
+    """
+
+  "import Radium":
+    "prefix": "imradium"
+    "body": """
+    import Radium${1:, \\{ ${2:Style}${3} \\}} from 'radium';
+    """
+
+  "import helmet":
+    "prefix": "imhelmet"
+    "body": """
+    import Helmet from 'react-helmet';
+    """
+
+  "import webcube/boilerplate":
+    "prefix": "imwebcubeb"
+    "body": """
+    import {
+      ${1:pureRender},${2:
+      connect,
+      stateSelector,
+      actionDispatcher,}
+    } from 'webcube/boilerplate';
+    """
+
+  "add @pureRender()":
+    "prefix": "@pure"
+    "body": """
+    @pureRender()
+    """
+
+  "add webcube's @connect":
+    "prefix": "@connect"
+    "body": """
+    @connect()
+    @stateSelector(
+      (${1}) => ({
+      }),
+    )
+    @actionDispatcher({
+      ${2}
+    }, 'actions')
+    """
+
+".source.js":
+
+  "import constants":
+    "prefix": "imconstants"
+    "body": """
+    import * as constants from '${1:..}/constants';
+    """
+
+  "import utils":
+    "prefix": "imutils"
+    "body": """
+    import {
+      ${1}
+    } from '${2:.}/utils';
+    """
+
+  "import actions":
+    "prefix": "imactions"
+    "body": """
+    import {
+      ${2}
+    } from '${1:..}/actions';
+    """
+
+  "import react-router-redux's actions":
+    "prefix": "imrouteraction"
+    "body": """
+    import { ${1:push}${2:, replace}${3} } from 'react-router-redux';
+    """
+
+  "import core-decorators":
+    "prefix": "imdecorators"
+    "body": """
+    import {${1}} from 'core-decorators';
+    """
+
+  "import moment":
+    "prefix": "immoment"
+    "body": """
+    import moment from 'moment';
+    """
+
+  "add @autobind":
+    "prefix": "@bind"
+    "body": """
+    @autobind
+    """
+
+  "add @autobind method":
+    "prefix": "@bindm"
+    "body": """
+    @autobind
+    ${1:methodName}() {
+      ${2}
+    }
+    """
+
+  "export default function":
+    "prefix": "exdf"
+    "body": """
+    export default function ${1:functionName}(${2}) {
+      ${3}
+    }
+    """
+
+  "export default named function":
+    "prefix": "exdfn"
+    "body": """
+    function ${1:functionName}(${2}) {
+      ${3}
+    }
+
+    export default ${1:functionName};
+    """
+
+  "export const":
+    "prefix": "exco"
+    "body": """
+    export const ${1:name} = ${2};
+    """
+
+  "export const":
+    "prefix": "exenv"
+    "body": """
+    export const ${1:ENV_VAR_NAME} = process.env.NODE_ENV !== 'production'
+        && process.env.DEV_ENV_${1:ENV_VAR_NAME}
+      || '${2:valueForProductionEnv}';
+    """
+
+  "this.xxx":
+    "prefix": "t"
+    "body": """
+    this.${1}
+    """
+
+  "process.exit":
+    "prefix": "pe"
+    "body": """
+    process.exit(${1:code});
+    """
+
+  "process.env":
+    "prefix": "env"
+    "body": """
+    process.env.${1:code};
+    """
+
+  "NODE_ENV":
+    "prefix": "nodeenv"
+    "body": """
+    process.env.NODE_ENV
+    """
+
+  "alert":
+    "prefix": "al"
+    "body": """
+    alert('${1:msg}');
+    """
+
+  "debugger":
+    "prefix": "de"
+    "body": """
+    debugger;
+    """
+
+  "JSON.stringify":
+    "prefix": "js"
+    "body": "JSON.stringify(${1:obj});"
+
+  "JSON.parse":
+    "prefix": "jp"
+    "body": "JSON.parse(${1:obj});"
+
+  "Object.keys":
+    "prefix": "keys"
+    "body": "Object.keys(${1})"
+
+  "Gulp Pipe":
+    "prefix": "gup"
+    "body":"""
+    .pipe(${1:plugin}($2));$3
+    """
+
+  "Gulp Task Source":
+    "prefix": "gus"
+    "body": """
+    gulp.task('${1:Task}', function () {
+      return gulp.src('${2:Source}')
+      .pipe(${3:plugin}($4))$5
+      $6
+    });
+    """
+
+".source.css, source.scss":
+
+  "px to rem":
+    "prefix": "px"
+    "body": "px2rem(${1})"

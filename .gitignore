@@ -1,0 +1,16 @@
+packages/
+.apm/
+.node-gyp/
+.tern-project
+.git-history/
+compile-cache/
+storage/
+blob-store/
+recovery/
+git-time-machine/
+split-diff/
+config.cson
+projects.cson
+kite-config.json
+linter-config.json
+package-deps-state.json
