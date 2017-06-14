@@ -1,0 +1,14 @@
+* Atom 看起来很炫
+
+基于 YY 大神
+
+** Setup
+
+1 克隆配置 
+#+BEGIN_SRC org
+    git clone https://github.com/kangni/atom.git ~/.atom
+    cp ~/.atom/config_sample.cson ~/.atom/config.cson
+#+End_SRC
+
+2 使用 package-sync 安装 plugins
+
